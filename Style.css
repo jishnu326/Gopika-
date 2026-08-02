@@ -1,0 +1,260 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9ec4,#ffd6e7,#ffeef5);
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Floating Hearts Background */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts::before,
+.hearts::after{
+    content:"❤️ ❤️ 💖 💕 💗 ❤️ 💖 💕";
+    position:absolute;
+    width:100%;
+    font-size:28px;
+    animation:floatHearts 20s linear infinite;
+    opacity:.25;
+}
+
+.hearts::after{
+    animation-delay:10s;
+}
+
+@keyframes floatHearts{
+    from{
+        transform:translateY(100%);
+    }
+    to{
+        transform:translateY(-120%);
+    }
+}
+
+/* Password Screen */
+
+.lock-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.lock-box{
+    width:90%;
+    max-width:350px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,255,255,.35);
+}
+
+.lock-box h1{
+    font-family:'Great Vibes',cursive;
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.lock-box p{
+    margin-bottom:20px;
+}
+
+.lock-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    text-align:center;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.lock-box button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f87;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.lock-box button:hover{
+    background:#ff2168;
+    transform:scale(1.05);
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:70px;
+    animation:heartbeat 1.5s infinite;
+}
+
+.hero h2{
+    margin-top:20px;
+    font-weight:300;
+    max-width:700px;
+}
+
+.hero button{
+    margin-top:40px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f87;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.08);
+}
+
+/* Gallery */
+
+#gallery{
+    padding:80px 20px;
+}
+
+#gallery h1{
+    text-align:center;
+    font-size:50px;
+    font-family:'Great Vibes',cursive;
+    margin-bottom:40px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* Love Letter */
+
+.letter{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.letter h1{
+    font-size:50px;
+    font-family:'Great Vibes',cursive;
+    margin-bottom:30px;
+}
+
+.letter-box{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:35px;
+    line-height:2;
+    box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+/* Ending */
+
+.ending{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.ending h1{
+    font-family:'Great Vibes',cursive;
+    font-size:60px;
+}
+
+.big-heart{
+    font-size:100px;
+    animation:heartbeat 1s infinite;
+    margin-top:20px;
+}
+
+/* Heartbeat */
+
+@keyframes heartbeat{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:52px;
+}
+
+.hero h2{
+    font-size:18px;
+}
+
+#gallery h1,
+.letter h1,
+.ending h1{
+    font-size:42px;
+}
+
+.big-heart{
+    font-size:70px;
+}
+
+}
